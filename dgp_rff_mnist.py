@@ -31,20 +31,8 @@ import losses
 
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
-"""
-@ops.RegisterGradient("FastFood2")
-def _fast_food2_grad(op, grad):
-    x_tensor = op.inputs[0]
-    shape = array_ops.shape(x_tensor)
-    first_grad_x_tensor = array_ops.zeros(shape)
-    
-    other_tensor = op.inputs[1]
-    shape = array_ops.shape(other_tensor)
-    first_grad_other = array_ops.zeros(shape)
-    
-    return [first_grad_x_tensor, first_grad_other, first_grad_other, first_grad_other, first_grad_other]
-"""
-ops.NotDifferentiable("FastFood2")
+
+ops.NotDifferentiable("FastFood3")
 
 def process_mnist(images, dtype = dtypes.float32, reshape=True):
     if reshape:
